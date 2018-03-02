@@ -1,0 +1,11 @@
+
+<input type="text" placeholder="filter your to-dos" ng-model="todoFilter">
+<ol>
+
+<li hoverstate ng-repeat="item in $ctrl.todoList | filter: todoFilter track by $index">{{item.task}}<i class="material-icons" ng-click="$ctrl.removeItem(item.id)">close</i></li>
+
+</ol>
+<!-- <input id="addToDo" type="text" placeholder="Add your to-do" ng-model="form.item"> -->
+<input id="addToDo" type="text" placeholder="Add your to-do" ng-model="newItem">
+
+<button type="button" ng-click="$ctrl.setData(newItem)">Add</button>
